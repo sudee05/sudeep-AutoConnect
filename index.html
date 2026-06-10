@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoConnect - Book Cars & Bikes</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Pure CSS State Management -->
+    <input type="radio" name="fleet-filter" id="filter-all" class="d-none" checked>
+    <input type="radio" name="fleet-filter" id="filter-cars" class="d-none">
+    <input type="radio" name="fleet-filter" id="filter-bikes" class="d-none">
+    <input type="checkbox" id="nav-toggle" class="d-none">
+
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fa-solid fa-car-side text-primary-theme"></i> Auto<span class="text-primary-theme">Connect</span>
+            </a>
+            <label for="nav-toggle" class="navbar-toggler" style="cursor:pointer;">
+                <span class="navbar-toggler-icon"></span>
+            </label>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item">
+                        <a href="#fleet" class="text-decoration-none d-block">
+                            <label for="filter-cars" class="nav-link mb-0" style="cursor:pointer;">Cars</label>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#fleet" class="text-decoration-none d-block">
+                            <label for="filter-bikes" class="nav-link mb-0" style="cursor:pointer;">Bikes</label>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#book" class="btn btn-primary-theme rounded-pill px-4 fw-semibold">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="book" class="hero-section position-relative">
+        <div class="css-slideshow position-absolute w-100 h-100 top-0 start-0 z-0">
+            <div class="css-slide h-100 position-absolute w-100 top-0 start-0" style="background: linear-gradient(rgba(48, 38, 59, 0.7), rgba(48, 38, 59, 0.7)), url('https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; animation-delay: 0s;"></div>
+            <div class="css-slide h-100 position-absolute w-100 top-0 start-0" style="background: linear-gradient(rgba(48, 38, 59, 0.7), rgba(48, 38, 59, 0.7)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; animation-delay: 4s;"></div>
+            <div class="css-slide h-100 position-absolute w-100 top-0 start-0" style="background: linear-gradient(rgba(48, 38, 59, 0.7), rgba(48, 38, 59, 0.7)), url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; animation-delay: 8s;"></div>
+        </div>
+        <div class="container position-relative z-1 text-center text-light d-flex flex-column justify-content-center" style="min-height: 80vh;">
+            <h1 class="display-4 fw-bold mb-3">Find Your Perfect Ride</h1>
+            <p class="lead mb-5">Choose from our premium collection of cars and bikes for your next journey.</p>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Browse by Category</h2>
+                <p class="text-muted">Explore our wide range of vehicles to suit your needs</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="category-card rounded-4 overflow-hidden position-relative">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80" alt="Cars" class="img-fluid w-100 object-fit-cover">
+                        <div class="category-overlay d-flex flex-column justify-content-end p-4">
+                            <h3 class="text-white fw-bold">Cars</h3>
+                            <p class="text-light mb-3">Premium sedans, SUVs, and luxury rides.</p>
+                            <a href="#fleet" class="text-decoration-none align-self-start">
+                                <label for="filter-cars" class="btn btn-light rounded-pill fw-semibold px-4 mb-0" style="cursor:pointer;">View Cars</label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="category-card rounded-4 overflow-hidden position-relative">
+                        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80" alt="Bikes" class="img-fluid w-100 object-fit-cover">
+                        <div class="category-overlay d-flex flex-column justify-content-end p-4">
+                            <h3 class="text-white fw-bold">Bikes</h3>
+                            <p class="text-light mb-3">Cruisers, sports bikes, and daily commuters.</p>
+                            <a href="#fleet" class="text-decoration-none align-self-start">
+                                <label for="filter-bikes" class="btn btn-light rounded-pill fw-semibold px-4 mb-0" style="cursor:pointer;">View Bikes</label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Fleet -->
+    <section id="fleet" class="fleet-section py-5 bg-light">
+        <div class="container py-4">
+            <div class="d-flex justify-content-between align-items-end mb-5">
+                <div>
+                    <h2 class="fw-bold">Featured Fleet</h2>
+                    <p class="text-muted mb-0">Our most popular vehicles ready for you</p>
+                </div>
+                <a href="#fleet" class="text-primary-theme text-decoration-none fw-semibold">
+                    <label for="filter-all" class="mb-0" style="cursor:pointer;">View All <i class="fa-solid fa-arrow-right"></i></label>
+                </a>
+            </div>
+            <div class="row g-4">
+                <!-- Vehicle Card 1 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-car">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" class="card-img-top object-fit-cover" alt="Car" style="height: 220px;">
+                            <span class="badge bg-primary-theme position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill">Featured</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Sports Coupe V8</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹8,000<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Luxury Car</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 2 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Auto</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Petrol</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vehicle Card 2 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-bike">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80" class="card-img-top object-fit-cover" alt="Bike" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Street Cruiser 500</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹1,500<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Motorbike</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 2 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Manual</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Petrol</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vehicle Card 3 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-car">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=600&q=80" class="card-img-top object-fit-cover" alt="Car" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Family SUV</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹2,500<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">SUV</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 5 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Auto</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Diesel</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vehicle Card 4 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-bike">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80" class="card-img-top object-fit-cover" alt="Bike" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Sport Bike Ninja</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹2,000<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Motorbike</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 2 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Manual</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Petrol</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vehicle Card 5 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-car">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80" class="card-img-top object-fit-cover" alt="Car" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Electric Sedan</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹3,000<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Eco Car</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 5 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Auto</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-bolt me-1"></i> Electric</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vehicle Card 6 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-bike">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?auto=format&fit=crop&w=600&q=80" class="card-img-top object-fit-cover" alt="Bike" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Adventure Trail 900</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹1,800<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Motorbike</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 1 Seat</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Manual</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Petrol</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EV Car 1 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-car">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2020_Tata_Nexon_EV_(India)_front_view.png?width=600" class="card-img-top object-fit-cover" alt="Car" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Tata Nexon EV</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹2,000<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Compact SUV</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 5 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Auto</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-bolt me-1"></i> Electric</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- EV Car 2 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-car">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80" class="card-img-top object-fit-cover" alt="Car" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">MG Windsor EV</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹2,200<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Crossover</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 5 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Auto</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-bolt me-1"></i> Electric</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commuter Car 1 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-car">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2020_Maruti_Suzuki_Wagon_R_VXi_(O)_(India)_front_view.png?width=600" class="card-img-top object-fit-cover" alt="Car" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Maruti Suzuki WagonR</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹1,000<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Hatchback</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 5 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Manual</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Petrol</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commuter Car 2 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-car">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Suzuki_Swift_(2024)_hybrid_IMG_2582.jpg?width=600" class="card-img-top object-fit-cover" alt="Car" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Maruti Suzuki Swift</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹1,200<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Hatchback</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 5 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Manual</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Petrol</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commuter Car 3 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-car">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Toyota_Etios_top_left_front.jpg?width=600" class="card-img-top object-fit-cover" alt="Car" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Toyota Etios</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹1,300<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Sedan</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 5 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Manual</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Petrol</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EV Scooter 1 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-bike">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://cdni.autocarindia.com/Reviews/20200128034445_Ather-450-X-5.jpg" class="card-img-top object-fit-cover" alt="Bike" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Ather 450X</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹600<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">EV Scooter</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 2 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Auto</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-bolt me-1"></i> Electric</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EV Bike 2 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-bike">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80" class="card-img-top object-fit-cover" alt="Bike" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Ultraviolette F77</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹1,500<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">EV Sport Bike</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 2 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Auto</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-bolt me-1"></i> Electric</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Petrol Bike 1 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-bike">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Honda_Shine.JPG?width=600" class="card-img-top object-fit-cover" alt="Bike" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Honda Shine</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹400<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Commuter Bike</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 2 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Manual</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Petrol</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Petrol Bike 2 -->
+                <div class="col-lg-4 col-md-6 vehicle-item type-bike">
+                    <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bajaj_Pulsar_180_2010_model.jpg?width=600" class="card-img-top object-fit-cover" alt="Bike" style="height: 220px;">
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title fw-bold mb-0">Bajaj Pulsar</h5>
+                                <span class="h5 fw-bold text-primary-theme mb-0">₹500<span class="fs-14 text-muted fw-normal">/day</span></span>
+                            </div>
+                            <p class="text-muted fs-14 mb-3">Sport Commuter</p>
+                            <ul class="list-inline vehicle-specs mb-4 pb-3 border-bottom">
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-user me-1"></i> 2 Seats</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Manual</li>
+                                <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Petrol</li>
+                            </ul>
+                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer pt-5 pb-3">
+        <div class="container py-4">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand fw-bold fs-3 text-white mb-3 d-inline-block" href="#">
+                        <i class="fa-solid fa-car-side text-primary-theme"></i> Auto<span class="text-primary-theme">Connect</span>
+                    </a>
+                    <p class="text-light-50 mb-4">Your reliable partner for vehicle rentals. Experience the best service with our premium fleet of cars and bikes.</p>
+                    <div class="social-links">
+                        <a href="#" class="btn btn-sm btn-social rounded-circle me-2"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-sm btn-social rounded-circle me-2"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="btn btn-sm btn-social rounded-circle me-2"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="btn btn-sm btn-social rounded-circle"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#fleet">Cars</a></li>
+                        <li><a href="#fleet">Bikes</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-4">Contact Info</h5>
+                    <ul class="list-unstyled text-light-50">
+                        <li class="mb-3"><i class="fa-solid fa-location-dot me-2 text-primary-theme"></i> 123 Drive Way, NY 10001</li>
+                        <li class="mb-3"><i class="fa-solid fa-phone me-2 text-primary-theme"></i> +1 800 123 4567</li>
+                        <li class="mb-3"><i class="fa-solid fa-envelope me-2 text-primary-theme"></i> support@autoconnect.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-4">Newsletter</h5>
+                    <p class="text-light-50 mb-3">Subscribe to get latest updates and offers.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control rounded-start-pill border-0" placeholder="Email Address">
+                        <button class="btn btn-primary-theme rounded-end-pill px-4" type="button"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4" style="opacity: 0.2;">
+            <div class="text-center text-light-50 fs-14">
+                &copy; 2026 AutoConnect. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- No JS -->
+</body>
+</html>

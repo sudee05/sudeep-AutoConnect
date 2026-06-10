@@ -1,0 +1,244 @@
+/* Custom CSS for AutoConnect */
+:root {
+    --primary-color: #a24486; /* Accent color inspired by biffes.org */
+    --primary-hover: #8e3873;
+    --dark-bg: #30263b; /* Dark theme inspired by biffes.org header */
+    --topbar-bg: #a24486; 
+    --text-dark: #212529;
+    --text-light: #f8f9fa;
+    --border-color: #e9ecef;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background-color: #fcfcfc;
+}
+
+/* Typography & Utilities */
+.fs-14 { font-size: 14px; }
+.text-primary-theme { color: var(--primary-color) !important; }
+.bg-primary-theme { background-color: var(--primary-color) !important; color: #fff; }
+
+.btn-primary-theme {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-theme:hover {
+    background-color: var(--primary-hover);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(162, 68, 134, 0.3);
+}
+
+.btn-outline-primary-theme {
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary-theme:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Topbar */
+.topbar {
+    background-color: var(--topbar-bg);
+    padding: 8px 0;
+}
+
+.topbar-contact li {
+    margin-left: 20px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.topbar-contact i {
+    margin-right: 5px;
+    opacity: 0.8;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    color: var(--dark-bg) !important;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    font-weight: 600;
+    margin: 0 10px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Categories Section */
+.categories-section {
+    margin-top: 50px;
+}
+
+.category-card {
+    height: 350px;
+    cursor: pointer;
+}
+
+.category-card img {
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-card:hover .btn-light {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+/* Fleet Section */
+.vehicle-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.vehicle-specs li {
+    font-size: 13px;
+    margin-right: 15px;
+}
+
+.vehicle-specs i {
+    color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-bg);
+}
+
+.text-light-50 {
+    color: rgba(255,255,255,0.6);
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.btn-social {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.btn-social:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .categories-section {
+        margin-top: 40px;
+    }
+}
+
+
+/* Pure CSS Interactivity (No JS) */
+
+#filter-cars:checked ~ section .vehicle-item:not(.type-car) {
+    display: none !important;
+}
+
+#filter-bikes:checked ~ section .vehicle-item:not(.type-bike) {
+    display: none !important;
+}
+
+/* Pure CSS Mobile Menu */
+@media (max-width: 991px) {
+    #nav-toggle:checked ~ nav .navbar-collapse {
+        display: block !important;
+    }
+}
+
+/* Pure CSS Slideshow Animation */
+.css-slideshow {
+    background-color: var(--dark-bg);
+}
+
+.css-slide {
+    opacity: 0;
+    animation: crossfade 12s infinite;
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes crossfade {
+    0% { opacity: 0; z-index: 1; }
+    15% { opacity: 1; z-index: 2; }
+    33% { opacity: 1; z-index: 2; }
+    48% { opacity: 0; z-index: 1; }
+    100% { opacity: 0; z-index: 1; }
+}
