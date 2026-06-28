@@ -1,0 +1,351 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(10, 10, 10, .7), rgba(10, 10, 10, .7)),
+        url("images/bmwm4cs.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Card */
+.register-card {
+    width: 500px;
+    background: rgba(25, 25, 25, .8);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 25px rgba(162, 68, 134, .5);
+}
+
+/* Heading */
+h2 {
+    color: #a24486;
+    font-weight: 600;
+}
+
+/* Labels */
+.form-label {
+    color: white;
+    font-weight: 500;
+}
+
+/* Inputs */
+.form-control {
+    background: #2d2d2d;
+    color: white;
+    border: 1px solid #555;
+}
+
+.form-control:focus {
+    background: #2d2d2d;
+    color: white;
+    border-color: #a24486;
+    box-shadow: 0 0 10px rgba(162, 68, 134, .5);
+}
+
+/* Date input icon */
+input[type="date"] {
+    color: white;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* Eye icon box */
+.input-group-text {
+    background: #2d2d2d;
+    border: 1px solid #555;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.input-group-text:hover {
+    background: #a24486;
+}
+
+/* Button */
+.register-btn {
+    background: #a24486;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.register-btn:hover {
+    background: #8e3873;
+    transform: translateY(-2px);
+}
+
+/* Match message */
+#matchMessage {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* Bootstrap validation colors */
+.form-control.is-valid {
+    border-color: #198754;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+/* Placeholder */
+::placeholder {
+    color: #bdbdbd !important;
+}
+
+/* Hide Edge password eye */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+/* Toast */
+.toast {
+    border-radius: 15px;
+}
+
+/* Mobile Responsive */
+@media(max-width:576px) {
+
+    .register-card {
+        width: 95%;
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+}
+
+/* login */
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background:
+    linear-gradient(rgba(10,10,10,.75), rgba(10,10,10,.75)),
+    url("images/bmwm4cs.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Login Card */
+.login-card{
+    width: 450px;
+    background: rgba(25,25,25,.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(162,68,134,.5);
+}
+
+/* Heading */
+h2{
+    color: #a24486;
+    font-weight: 600;
+}
+
+/* Labels */
+.form-label{
+    color: white;
+    font-weight: 500;
+}
+
+/* Inputs */
+.form-control{
+    background: #2d2d2d;
+    border: 1px solid #555;
+    color: white;
+}
+
+.form-control:focus{
+    background: #2d2d2d;
+    color: white;
+    border-color: #a24486;
+    box-shadow: 0 0 10px rgba(162,68,134,.5);
+}
+
+/* Placeholder */
+::placeholder{
+    color: #bdbdbd !important;
+    opacity: .8;
+}
+
+/* Eye icon */
+.input-group-text{
+    background: #2d2d2d;
+    border: 1px solid #555;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.input-group-text:hover{
+    background: #a24486;
+}
+
+/* Login Button */
+.login-btn{
+    background: #a24486;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.login-btn:hover{
+    background: #8e3873;
+    transform: translateY(-2px);
+}
+
+/* Forgot Password */
+.forgot-link{
+    color: #d7a6c6;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-link:hover{
+    color: white;
+}
+
+/* Sign Up Link */
+.signup-link{
+    color: #a24486;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link:hover{
+    color: white;
+}
+
+/* Bootstrap validation */
+.form-control.is-valid{
+    border-color: #198754;
+}
+
+.form-control.is-invalid{
+    border-color: #dc3545;
+}
+
+/* Hide browser eye icon */
+input::-ms-reveal,
+input::-ms-clear{
+    display: none;
+}
+
+/* Responsive */
+@media(max-width:576px){
+
+    .login-card{
+        width: 95%;
+        padding: 25px;
+    }
+
+    h2{
+        font-size: 28px;
+    }
+
+}
+
+/* payment */
+body{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(10,10,10,.8),rgba(10,10,10,.8)),
+    url("images/bmwm4cs.png");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.payment-card{
+    width:500px;
+    background:rgba(25,25,25,.85);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 0 25px rgba(162,68,134,.5);
+}
+
+h2{
+    color:#a24486;
+}
+
+.form-label{
+    color:white;
+}
+
+.summary-box{
+    background:#2d2d2d;
+    padding:20px;
+    border-radius:15px;
+    color:white;
+}
+
+.form-select{
+    background:#2d2d2d;
+    color:white;
+    border:1px solid #555;
+}
+
+.form-select:focus{
+    border-color:#a24486;
+    box-shadow:0 0 10px rgba(162,68,134,.5);
+}
+
+.pay-btn{
+    background:#a24486;
+    color:white;
+    border:none;
+    padding:12px;
+    font-weight:600;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.pay-btn:hover{
+    background:#8e3873;
+    transform:translateY(-2px);
+}

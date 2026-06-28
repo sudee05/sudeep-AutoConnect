@@ -12,7 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
+
+
 <body>
     <!-- Pure CSS State Management -->
     <input type="radio" name="fleet-filter" id="filter-all" class="d-none" checked>
@@ -34,16 +37,13 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                     <li class="nav-item">
-                        <a href="#fleet" class="text-decoration-none d-block">
-                            <label for="filter-cars" class="nav-link mb-0" style="cursor:pointer;">Cars</label>
-                        </a>
+                         <a class="nav-link" href="cars.html">Cars</a>
                     </li>
                     <li class="nav-item">
                         <a href="#fleet" class="text-decoration-none d-block">
-                            <label for="filter-bikes" class="nav-link mb-0" style="cursor:pointer;">Bikes</label>
-                        </a>
+                            <a class="nav-link" href="bikes.html">Bikes</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
                 <div class="d-flex">
@@ -53,18 +53,41 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="book" class="hero-section position-relative">
-        <div class="css-slideshow position-absolute w-100 h-100 top-0 start-0 z-0">
-            <div class="css-slide h-100 position-absolute w-100 top-0 start-0" style="background: linear-gradient(rgba(48, 38, 59, 0.7), rgba(48, 38, 59, 0.7)), url('https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; animation-delay: 0s;"></div>
-            <div class="css-slide h-100 position-absolute w-100 top-0 start-0" style="background: linear-gradient(rgba(48, 38, 59, 0.7), rgba(48, 38, 59, 0.7)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; animation-delay: 4s;"></div>
-            <div class="css-slide h-100 position-absolute w-100 top-0 start-0" style="background: linear-gradient(rgba(48, 38, 59, 0.7), rgba(48, 38, 59, 0.7)), url('https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; animation-delay: 8s;"></div>
+   <!-- Hero Section -->
+<section class="hero-section position-relative">
+
+    <div class="hero-slider">
+        <img id="heroImage"
+             src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1600&q=80"
+             alt="Hero Image">
+    </div>
+
+    <!-- Slider Buttons -->
+    <button class="slider-btn prev-btn" onclick="prevSlide()">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <button class="slider-btn next-btn" onclick="nextSlide()">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div class="container position-relative text-center text-light d-flex flex-column justify-content-center"
+        style="min-height:80vh; z-index:2;">
+        <h1 class="display-4 fw-bold">Find Your Perfect Ride</h1>
+        <p class="lead">Choose from our premium collection of cars and bikes.</p>
+
+        <div class="mt-4">
+            <a href="cars.html" class="btn btn-primary btn-lg me-3">
+                View Cars
+            </a>
+
+            <a href="bikes.html" class="btn btn-outline-light btn-lg">
+                View Bikes
+            </a>
         </div>
-        <div class="container position-relative z-1 text-center text-light d-flex flex-column justify-content-center" style="min-height: 80vh;">
-            <h1 class="display-4 fw-bold mb-3">Find Your Perfect Ride</h1>
-            <p class="lead mb-5">Choose from our premium collection of cars and bikes for your next journey.</p>
-        </div>
-    </section>
+    </div>
+
+</section>
 
     <!-- Categories Section -->
     <section class="categories-section py-5">
@@ -133,7 +156,10 @@
                                 <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Auto</li>
                                 <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Petrol</li>
                             </ul>
-                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                           <a href="booking.html?vehicle=Sports Coupe V8&price=8000"
+class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">
+Rent Now
+</a>
                         </div>
                     </div>
                 </div>
@@ -158,7 +184,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Vehicle Card 3 -->
+<!-- Vehicle Card 3 -->
                 <div class="col-lg-4 col-md-6 vehicle-item type-car">
                     <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
                         <div class="position-relative">
@@ -175,7 +201,10 @@
                                 <li class="list-inline-item text-muted"><i class="fa-solid fa-gear me-1"></i> Auto</li>
                                 <li class="list-inline-item text-muted"><i class="fa-solid fa-gas-pump me-1"></i> Diesel</li>
                             </ul>
-                            <button class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">Rent Now</button>
+                            <a href="booking.html?vehicle=Family%20SUV&price=2500&image=https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=1000&q=80"
+class="btn btn-outline-primary-theme w-100 rounded-pill fw-semibold">
+    Rent Now
+</a>
                         </div>
                     </div>
                 </div>
@@ -221,7 +250,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Vehicle Card 6 -->
+                <!--                 Vehicle Card 6 -->
                 <div class="col-lg-4 col-md-6 vehicle-item type-bike">
                     <div class="vehicle-card card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
                         <div class="position-relative">
@@ -494,6 +523,6 @@
         </div>
     </footer>
 
-    <!-- No JS -->
+    
 </body>
 </html>
